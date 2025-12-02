@@ -4,16 +4,16 @@ services:
     runtime: node
     rootDir: ./server
     buildCommand: npm install && npm run build
-    startCommand: npm run start:prod
+    startCommand: npm start
     plan: free
-    autoDeploy: false
+    autoDeploy: true
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 10000
       - key: MONGO_URI
-        sync: false # Set this manually in Render dashboard
+        value: mongodb+srv://admin:Minhanh123.@cluster0.xasxqa4.mongodb.net/user-registration?retryWrites=true&w=majority&appName=Cluster0
       - key: FRONTEND_URL
-        sync: false # Set this manually in Render dashboard
+        value: https://user-registration-ia06.vercel.app
     healthCheckPath: /health
