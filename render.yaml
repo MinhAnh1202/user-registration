@@ -3,10 +3,11 @@ services:
     name: user-registration-api
     runtime: node
     rootDir: ./server
-    buildCommand: npm install && npm run build
-    startCommand: npm run start:prod
+    buildCommand: npm ci && npm run build
+    startCommand: node dist/main
     plan: free
     autoDeploy: true
+    env: node
     envVars:
       - key: NODE_ENV
         value: production
