@@ -3,8 +3,8 @@ services:
     name: user-registration-api
     runtime: node
     rootDir: ./server
-    buildCommand: npm install && npm run build
-    startCommand: node dist/main.js
+    buildCommand: ./render-build.sh
+    startCommand: npm run start:prod
     plan: free
     autoDeploy: false
     envVars:
@@ -16,4 +16,4 @@ services:
         sync: false # Set this manually in Render dashboard
       - key: FRONTEND_URL
         sync: false # Set this manually in Render dashboard
-    healthCheckPath: /
+    healthCheckPath: /health
