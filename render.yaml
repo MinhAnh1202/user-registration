@@ -3,7 +3,7 @@ services:
     name: user-registration-api
     runtime: node
     rootDir: ./server
-    buildCommand: ./render-build.sh
+    buildCommand: npm install && npm run build
     startCommand: npm run start:prod
     plan: free
     autoDeploy: false
